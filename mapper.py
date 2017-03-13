@@ -7,10 +7,27 @@
 # We need to write them out to standard output, separated by a tab
 
 import sys
+import csv
+import re
 
-for line in sys.stdin:
-    data = line.strip().split("\t")
-    if len(data) == 6:
-        date, time, store, item, cost, payment = data
-        print "{0}\t{1}".format(store, cost)
+split_str = ' |\n|\\.|\\,|\\!|\\?|\\:|\\;|\\"|\\(|\\)|\\<|\\>|\\[|\\]|\\#|\\$|\\=|\\-|\\/'   
+#  .,!?:;"()<>[]#$=-/'
+def mapper():
+    reader = csv.reader(sys.stdin, delimiter='\t')
+    
+    for line in reader:
+        id = line[0]
+        body = re.split(split_str, line[4])
+        for w in body:
+            if len(w) > 0:
+                print "{1}\t{0}".format(id, w.lower())
+
+test = 'a. a, a\n a# a! a? a: a; a" a( a) a< a> a[ a] a# a$ a= a- a/'
+
+if __name__ == "__main__":
+    mapper()
+    #print test
+    #a = re.split(split_str, test)
+    #print a[1], "len = ", len(a[1])
+
 

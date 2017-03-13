@@ -2,15 +2,9 @@
 
 import sys
 
-salesTotal = 0
-oldKey = None
-
-# Loop around the data
-# It will be in the format key\tval
-# Where key is the store name, val is the sale amount
-#
-# All the sales for a particular store will be presented,
-# then the key will change and we'll be dealing with the next store
+wordTotal = 0
+oldWord = None
+id_list = []
 
 for line in sys.stdin:
     data_mapped = line.strip().split("\t")
@@ -18,16 +12,17 @@ for line in sys.stdin:
         # Something has gone wrong. Skip this line.
         continue
 
-    thisKey, thisSale = data_mapped
+    thisWord, id = data_mapped
+    
+    if oldWord and oldWord != thisWord:
+        print "{0}\t{1}\t{2}".format(oldWord, wordTotal, id_list)
+        oldWord = thisWord;
+        wordTotal = 0
+        id_list = []
 
-    if oldKey and oldKey != thisKey:
-        print oldKey, "\t", salesTotal
-        oldKey = thisKey;
-        salesTotal = 0
-
-    oldKey = thisKey
-    salesTotal += float(thisSale)
-
-if oldKey != None:
-    print oldKey, "\t", salesTotal
+    oldWord = thisWord
+    wordTotal += 1
+    id_list.append(id)
+if oldWord != None:
+    print oldWord, "\t", wordTotal
 
