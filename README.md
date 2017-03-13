@@ -13,3 +13,5 @@ hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.0
 2. Calculate the mean of sales for each weekday.
    1. Calculate the mean on reducer
    2. Calculate the intermediate sum with combiner to reduce traffic.
+
+3. Combine the user info and forum post to show the user reputation in the post.
