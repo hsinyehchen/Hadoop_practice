@@ -18,7 +18,7 @@ def mapper():
         weekday = datetime.strptime(data[0], "%Y-%m-%d").weekday()
         sale = data[4]
         
-        print "{0}\t{1}".format(weekday, sale)
+        print "{0}\t{1}\t1".format(weekday, sale)
 
 
 if __name__ == "__main__":
