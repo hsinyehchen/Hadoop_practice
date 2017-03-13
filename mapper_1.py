@@ -3,8 +3,8 @@
 # Format of each line is:
 # date\ttime\tstore name\titem description\tcost\tmethod of payment
 #
-# We want elements 2 (store name) and 4 (cost)
-# We need to write them out to standard output, separated by a tab
+# We want elements 0 (node id) and 4 (post)
+# and split the post into words delimited by special characters.
 
 import sys
 import csv
@@ -22,7 +22,7 @@ def mapper():
             if len(w) > 0:
                 print "{1}\t{0}".format(id, w.lower())
 
-test = 'a. a, a\n a# a! a? a: a; a" a( a) a< a> a[ a] a# a$ a= a- a/'
+#test = 'a. a, a\n a# a! a? a: a; a" a( a) a< a> a[ a] a# a$ a= a- a/'
 
 if __name__ == "__main__":
     mapper()
