@@ -11,3 +11,5 @@ hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.0
 ### Exercice
 1. Create an index of all words that can be find in the body of a forum post and node id they can be found in.
 2. Calculate the mean of sales for each weekday.
+   1. Calculate the mean on reducer
+   2. Calculate the intermediate sum and counts on mapper 
