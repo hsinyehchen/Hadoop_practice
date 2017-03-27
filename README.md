@@ -15,3 +15,9 @@ hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.0
    2. Calculate the intermediate sum with combiner to reduce traffic.
 
 3. Combine the user info and forum post to show the user reputation in the post.
+4. Course Project
+   1. Data Set: 
+      * forum_node.tsv - forum posts
+      * forum_users.tsv - user info
+   2. Questions:
+      1. For each student what is the hour during which the student has posted the most posts.
