@@ -23,3 +23,4 @@ hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.0
       1. For each student what is the hour during which the student has posted the most posts.
       2. Write a mapreduce program that would process the forum_node data and output the length of the post and the average answer.
       3. Write a mapreduce program that would output Top 10 tags, ordered by the number of questions they appear in.
+      4. As the first step for this analysis we have been tasked with writing a mapreduce program that for each forum thread (that is a question node with all it's answers and comments) would give us a list of students that have posted there - either asked the question, answered a question or added a comment. If a student posted to that thread several times, they should be added to that list several times as well, to indicate intensity of communication.
